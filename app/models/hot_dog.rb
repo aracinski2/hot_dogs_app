@@ -1,0 +1,2 @@
+class HotDog < ApplicationRecord
+end
