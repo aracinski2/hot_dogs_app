@@ -18,4 +18,19 @@ class Api::HotDogsController < ApplicationController
     @hot_dog.save
     render 'show.json.jb'
   end
+
+  def update
+    @hot_dog = HotDog.find_by(id: params[:id])
+    @hot_dog.style =params[:style]
+    @hot_dog.bun = params[:bun]
+    @hot_dog.amount = params[:amount]
+    @hot_dog.save
+    render 'show.json.jb'
+  end
+
+  def delete
+    @hot_dog = HotDog.find_by(id: params[:id])
+    @hot_dog.destroy
+    render json: {message: "item deleted!"}
+  end
 end
