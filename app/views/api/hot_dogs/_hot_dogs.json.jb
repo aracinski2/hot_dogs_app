@@ -1,0 +1,6 @@
+{
+  id: hot_dog.id,
+  style: hot_dog.style,
+  bun: hot_dog.bun,
+  amount: hot_dog.amount,
+}
