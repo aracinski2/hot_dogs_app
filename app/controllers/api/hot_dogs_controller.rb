@@ -1,6 +1,7 @@
 class Api::HotDogsController < ApplicationController
   def index
-    @hot_dogs = HotDog.all
+    # @hot_dogs = HotDog.all
+    @hot_dogs = HTTP.get("http://api.openweathermap.org/data/2.5/weather?q=London&appid=#{Rails.application.credentials.weather_api[:api_key]}").parse
     render 'index.json.jb'
   end
 
